@@ -4,7 +4,10 @@ How to run it:
  - node <your name file>.js
 
 
-express js instalation run:
+Express js instalation run:
  - npm init
      or
  - npm init -y
+
+To install it, run "npm i express"
+! u can open Express JS web
