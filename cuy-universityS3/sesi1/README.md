@@ -12,7 +12,7 @@ Express js instalation run:
 To install it, run "npm i express"<br>
 ! u can open Express JS web
 
-+ Run "npm i nodemon" library
++ Run "npm i nodemon" library</br>
   dont forget to check it on package.json dependencies to make sure nodemon was installed
   
 + then change "node index.js" to "nodemon index.js" 
