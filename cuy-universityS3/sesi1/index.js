@@ -5,7 +5,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// main routes or URL or endpoint Method GET
+
 app.get('/', (req, res) => {
+  res.send('Main Page');
+});
+
+app.get('/hello', (req, res) => {
   res.send('Hello World!');
 });
 
