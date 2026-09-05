@@ -11,3 +11,5 @@ Express js instalation run:
 
 To install it, run "npm i express"<br>
 ! u can open Express JS web
+
++ Run "npm i nodemon" library
