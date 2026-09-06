@@ -15,16 +15,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/hello', (req, res) => {
+  console.log({ urlParam: req.query });
   res.send('Hello World!');
 });
 
 app.post('/login', (req, res) => {
     console.log({ requestFromOutside : req.body });
+    const username = req.body.username;
+    if ( username === usernameFromDbExist ) {
+      res.status(400).send('Username cant be used');
+    }
     res.send('Login Success');
 });
 
 app.put('/username', (req, res) => {
-  console.log( { updatedData : req.body } );
+  console.log( { updatedData: req.body } );
   res.send('Username updated');
 });
 
