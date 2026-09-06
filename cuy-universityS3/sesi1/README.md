@@ -1,5 +1,14 @@
 <h1>Node JS with Express JS</h1>
 
+
+---------------------------
+<b>All thats you neeed is:
+1. Text editor
+2. Node js
+3. Express JS</b>
+--------------------------
+
+
 How to run it:
  - node <your name file>.js
 
