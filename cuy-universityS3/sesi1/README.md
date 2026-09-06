@@ -5,7 +5,8 @@
 <b>All thats you neeed is:
 1. Text editor
 2. Node js
-3. Express JS</b>
+3. Express JS
+4. Postman API Platform</b>
 --------------------------
 
 
