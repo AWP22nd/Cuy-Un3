@@ -5,13 +5,17 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
+const db = require('./conn.js');
 
 // main routes or URL or endpoint Method GET
 
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Main Page');
+  db.query('SELECT * FROM siswa', (error, result) => {
+    console.log( result );
+    res.send(result);
+  })
 });
 
 app.get('/hello', (req, res) => {
