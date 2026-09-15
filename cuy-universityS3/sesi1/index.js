@@ -1,11 +1,9 @@
-// const data = "testing . . ."
-// console.log(data)
-
 const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 const db = require('./conn.js');
+const response = require('./ress.js');
 
 // main routes or URL or endpoint Method GET
 
@@ -13,7 +11,6 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   db.query('SELECT * FROM siswa', (error, result) => {
-    console.log( result );
     res.send(result);
   })
 });
@@ -40,4 +37,3 @@ app.put('/username', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-// Run it with "npm run api-service", then open in localhost:port in your web browser
