@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   db.query('SELECT * FROM siswa', (error, result) => {
-    res.send(result);
+    response(200, result, 'get all data ...', res)
   })
 });
 
