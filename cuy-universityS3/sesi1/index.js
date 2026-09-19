@@ -10,15 +10,23 @@ const response = require('./ress.js');
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  db.query('SELECT * FROM siswa', (error, result) => {
+  const sql = "SELECT * FROM siswa"
+
+  db.query( sql, (error, result) => {
     response(200, result, 'get all data ...', res)
   })
 });
 
-app.get('/hello', (req, res) => {
-  console.log({ urlParam: req.query });
-  res.send('Hello World!');
-});
+app.get('/find', (req, res) => {
+    const sql = `SELECT * FROM siswa WHERE nis = ${req.query.nis}`
+
+    console.log('Find nis: ', req.query.nis);
+    })
+
+// app.get('/hello', (req, res) => {
+//   // console.log({ urlParam: req.query });
+//   // res.send('Hello World!');
+// });
 
 app.post('/login', (req, res) => {
     console.log({ requestFromOutside : req.body });
