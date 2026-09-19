@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
   })
 });
 
+//http://localhost:3000/find?nis=232410823
 app.get('/find', (req, res) => {
     const sql = `SELECT * FROM siswa WHERE nis = ${req.query.nis}`
 
@@ -28,6 +29,7 @@ app.get('/find', (req, res) => {
 //   // res.send('Hello World!');
 // });
 
+// Postman POST http://localhost:3000/login
 app.post('/login', (req, res) => {
     console.log({ requestFromOutside : req.body });
     const username = req.body.username;
@@ -37,6 +39,7 @@ app.post('/login', (req, res) => {
     res.send('Login Success');
 });
 
+// Postman PUT http://localhost:3000/username
 app.put('/username', (req, res) => {
   console.log( { updatedData: req.body } );
   res.send('Username updated');
