@@ -17,7 +17,7 @@
 
 Express js instalation run:</br><b>
 > - npm init</br>
->    or</br>
+ or
 > - npm init -y<b>
 
 To install it, run <b>"npm i express"</b><br>
@@ -31,7 +31,8 @@ To install it, run <b>"npm i express"</b><br>
 Install library body-parser with</br>
 <b>"npm i body-parser"</b>
 </br>
-! Method Post &  Put</br>
+</br>
+! Method Post &  Put
 </br>
 >  Run it with postman, create new collection/workspace.</br>
 >  Then type your localhost link.</br>
