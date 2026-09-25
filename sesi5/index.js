@@ -6,13 +6,14 @@ const db = require('./conn.js');
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    console.log('Get all data ...');
-})
+app.get('/', (req, res) => {})
 
-get.app('/', (req, res) => {})
-get.app('/', (req, res) => {})
-get.app('/', (req, res) => {})
+app.post('/', (req, res) => {})
+
+app.put('/', (req, res) => {})
+
+app.delete('/', (req, res) => {})
+
 
 app.listen(port, () => {
     console.log('Example app listening on port ${port}')
