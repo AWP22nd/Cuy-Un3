@@ -10,7 +10,9 @@ app.get('/', (req, res) => {
     res.send(`Hello, World!`)
 })
 
-app.post('/', (req, res) => {})
+app.post('/siswa/post', (req, res) => {
+    res.send('Post request')
+})
 
 app.put('/', (req, res) => {})
 
