@@ -14,10 +14,13 @@ app.post('/siswa/post', (req, res) => {
     res.send('Post request')
 })
 
-app.put('/', (req, res) => {})
+app.put('/siswa/put', (req, res) => {
+    res.send('Put/Update request')
+})
 
-app.delete('/', (req, res) => {})
-
+app.delete('/siswa/delete', (req, res) => {
+    res.send('Delete request')
+})
 
 app.listen(port, () => {
     console.log('Example app listening on port ${port}')
