@@ -6,8 +6,8 @@ const db = require('./conn.js');
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send(`Hello, World!`)
+app.get('/siswa', (req, res) => {
+    res.send(`List siswa`)
 })
 
 app.post('/siswa/post', (req, res) => {
