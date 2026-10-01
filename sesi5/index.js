@@ -10,6 +10,11 @@ app.get('/siswa', (req, res) => {
     res.send(`List siswa`)
 })
 
+app.get("/siswa/:id", (req, res) => {
+    const id = req.params.id
+    res.send(`List siswa by id ${id}`)
+})
+
 app.post('/siswa/post', (req, res) => {
     res.send('Post request')
 })
