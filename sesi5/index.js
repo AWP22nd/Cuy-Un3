@@ -6,6 +6,10 @@ const db = require('./conn.js');
 
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send(`Ready to use`)
+})
+
 app.get('/siswa', (req, res) => {
     res.send(`List siswa`)
 })
