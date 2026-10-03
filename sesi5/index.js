@@ -10,20 +10,20 @@ app.get('/siswa', (req, res) => {
     res.send(`List siswa`)
 })
 
-app.get("/siswa/:id", (req, res) => {
-    const id = req.params.id
-    res.send(`List siswa by id ${id}`)
+app.get("/siswa/:nis", (req, res) => {
+    const nis = req.params.nis
+    res.send(`List siswa by nis ${nis}`)
 })
 
-app.post('/siswa/post', (req, res) => {
+app.post('/siswa', (req, res) => {
     res.send('Post request')
 })
 
-app.put('/siswa/put', (req, res) => {
+app.put('/siswa', (req, res) => {
     res.send('Put/Update request')
 })
 
-app.delete('/siswa/delete', (req, res) => {
+app.delete('/siswa', (req, res) => {
     res.send('Delete request')
 })
 
