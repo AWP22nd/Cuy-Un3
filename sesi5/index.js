@@ -3,11 +3,12 @@ const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 const db = require('./conn.js');
+const ress = require('./ress.js');
 
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send(`Ready to use`)
+    ress('Ready to use', res)
 })
 
 app.get('/siswa', (req, res) => {
