@@ -8,28 +8,28 @@ const ress = require('./ress.js');
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    ress('Ready to use', res)
+    ress("This is data", 'Ready to use', res)
 })
 
 app.get('/siswa', (req, res) => {
-    res.send(`List siswa`)
+    ress('List siswa', res)
 })
 
 app.get("/siswa/:nis", (req, res) => {
     const nis = req.params.nis
-    res.send(`List siswa by nis ${nis}`)
+    ress(`List siswa by nis ${nis}`, res)
 })
 
 app.post('/siswa', (req, res) => {
-    res.send('Post request')
+    ress('Post request', res)
 })
 
 app.put('/siswa', (req, res) => {
-    res.send('Put/Update request')
+    ress('Put/Update request', res)
 })
 
 app.delete('/siswa', (req, res) => {
-    res.send('Delete request')
+    ress('Delete request', res)
 })
 
 app.listen(port, () => {
