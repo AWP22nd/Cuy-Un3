@@ -1,7 +1,7 @@
-const ress = (_data, message, res) => {
+const ress = (data, message, res) => {
     res.json([
         {
-            _data,
+            payload: data,
             message,
             metadata: {
                 prev: "",
