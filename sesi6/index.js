@@ -8,7 +8,7 @@ const ress = require('./ress.js');
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    ress("This is data", 'Ready to use', res)
+    ress("API V1", 'Ready to use', res)
 })
 
 app.get('/siswa', (req, res) => {
