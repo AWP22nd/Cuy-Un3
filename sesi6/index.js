@@ -29,6 +29,13 @@ app.get("/siswa/:nis", (req, res) => {
 })
 
 app.post('/siswa', (req, res) => {
+    const { nis, namaLengkap, kelas, alamat } = req.body
+
+    const sql = `insert into siswa values ('${nis}', '${namaLengkap}', '${kelas}', '${alamat}')`
+
+    db.query (sql, (err, fields) => {
+        console.log(fields)
+    })
     ress('Post request', "Added new student data", res)
 })
 
@@ -41,5 +48,5 @@ app.delete('/siswa', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Example app listening on port ${port}')
+    console.log(`Example app listening on port ${port}`)
 })
