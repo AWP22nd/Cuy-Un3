@@ -37,13 +37,10 @@ app.post('/siswa', (req, res) => {
     db.query (sql, (err, fields) => {
         if (err) throw err
         if (fields.affectedRows) {
+            ress(fields.insertId , "Added new student data", res)
             console.log(fields)
-        } else {
-            console.log('Data siswa gagal ditambahkan')
         }
     })
-    res.send('Data siswa berhasil ditambahkan')
-    // ress('Post request', "Added new student data", res)
 })
 
 app.put('/siswa', (req, res) => {
