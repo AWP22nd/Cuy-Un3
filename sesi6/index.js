@@ -31,12 +31,12 @@ app.get("/siswa/:nis", (req, res) => {
 app.post('/siswa', (req, res) => {
     const { nis, namaLengkap, kelas, alamat } = req.body
 
-    console.log(req.body)
+    // console.log(req.body)
     const sql = `insert into siswa(nis, nama_lengkap, kelas, alamat) values (${nis}, '${namaLengkap}', '${kelas}', '${alamat}')`
 
     db.query (sql, (err, fields) => {
-        if (err) throw err
-        if (fields.affectedRows) {
+        if (err) ress(err, "Error adding new student data", res)
+        if (fields?.affectedRows) {
             ress(fields.insertId , "Added new student data", res)
             console.log(fields)
         }
