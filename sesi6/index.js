@@ -37,13 +37,19 @@ app.post('/siswa', (req, res) => {
     db.query (sql, (err, fields) => {
         if (err) ress(err, "Error adding new student data", res)
         if (fields?.affectedRows) {
-            ress(fields.insertId , "Added new student data", res)
+            const data = {
+                isSuccess: fields.affectedRows,
+                id: fields.insertId,
+            }
+            ress(data, "Added new student data", res)
             console.log(fields)
         }
     })
 })
 
 app.put('/siswa', (req, res) => {
+    const { nis } = req.body
+    const sql = `UPDATE siswa SET nama_lengkap = '${req.body.namaLengkap}', kelas = '${req.body.kelas}', alamat = '${req.body.alamat}' WHERE nis = ${nis}`
     ress('Put/Update request', res)
 })
 
