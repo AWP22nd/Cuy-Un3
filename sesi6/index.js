@@ -48,9 +48,22 @@ app.post('/siswa', (req, res) => {
 })
 
 app.put('/siswa', (req, res) => {
-    const { nis } = req.body
-    const sql = `UPDATE siswa SET nama_lengkap = '${req.body.namaLengkap}', kelas = '${req.body.kelas}', alamat = '${req.body.alamat}' WHERE nis = ${nis}`
-    ress('Put/Update request', res)
+    const { nis, namaLengkap, kelas, alamat } = req.body
+    const sql = `UPDATE siswa SET nama_lengkap = '${namaLengkap}', kelas = '${kelas}', alamat = '${alamat}' WHERE nis = ${nis}`
+    
+    db.query(sql, (err, fields) => {
+        if (err) ress(err, "Error updating student data", res)
+        if (fields?.affectedRows) {
+            const data = {
+                isSuccess: fields.affectedRows,
+                message: fields.message,
+            }
+            ress(data, "Data updated successfully", res)
+        } else {
+            ress('404', 'Not Found! No changes made', res)
+        }
+        console.log(fields)
+    })
 })
 
 app.delete('/siswa', (req, res) => {
