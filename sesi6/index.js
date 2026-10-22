@@ -67,6 +67,12 @@ app.put('/siswa', (req, res) => {
 })
 
 app.delete('/siswa', (req, res) => {
+    const { nis } = req.body
+    const sql = `DELETE FROM siswa WHERE nis = ${nis}`
+    db.query(sql, (err, fields) => {
+        if (err) ress("404", "Not Found!", res)
+        console.log(fields)
+    })
     ress('Delete request', res)
 })
 
