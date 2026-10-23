@@ -71,9 +71,18 @@ app.delete('/siswa', (req, res) => {
     const sql = `DELETE FROM siswa WHERE nis = ${nis}`
     db.query(sql, (err, fields) => {
         if (err) ress("404", "Not Found!", res)
-        console.log(fields)
+
+        if (fields?.affectedRows) {
+            const data = {
+                isSuccess: fields.affectedRows,
+                message: fields.message,
+            }
+        ress(data, 'Deleted Data Successfully', res)
+        // console.log(fields)
+        } else {
+            ress('404', 'Not Found! No changes made', res)
+        }
     })
-    ress('Delete request', res)
 })
 
 app.listen(port, () => {
